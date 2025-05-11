@@ -1,0 +1,10 @@
+{
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+  "install": "npm install --workspace=backend && npm install --workspace=frontend"
+  }
+}

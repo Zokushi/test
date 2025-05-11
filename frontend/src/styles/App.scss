@@ -1,0 +1,186 @@
+/*
+  App.scss
+  This file contains custom styles for the Cursed Compass app, including theme, layout, and spooky effects.
+  It uses SCSS features and overrides some Bootstrap styles for a unique look.
+*/
+
+/*
+  Root container styles
+  - Center content and set max width
+*/
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/*
+  Logo styles (legacy from Vite/React starter)
+  - Size, padding, and hover effects
+*/
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/*
+  Logo spin animation (legacy)
+*/
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+  Only animate logo if user prefers motion
+*/
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/*
+  Card base padding
+*/
+.card {
+  padding: 2em;
+}
+
+/*
+  Docs text color (legacy)
+*/
+.read-the-docs {
+  color: #888;
+}
+
+/*
+  Body theme
+  - Dark gradient background, spooky font, and text color
+*/
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181a1b 0%, #232526 100%);
+  color: #f8f9fa;
+  font-family: 'Montserrat', Arial, sans-serif;
+  position: relative;
+}
+
+// Fog overlay effect
+// - Spooky texture overlay for atmosphere
+.fog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  /* Green dust and scratches pattern for horror vibe */
+  background: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png')
+    repeat;
+  opacity: 0.18;
+  z-index: 1;
+}
+
+/*
+  Custom dark card styles
+  - Red border, rounded corners, and shadow for featured locations
+*/
+.card.bg-dark {
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.7),
+    0 1.5px 6px 0 rgba(255, 0, 0, 0.15);
+  border-radius: 1rem;
+  border: 2px solid #b71c1c;
+}
+
+/*
+  Bootstrap button overrides for primary and danger buttons
+  - Custom colors and hover effects
+*/
+.btn-primary {
+  background-color: #1976d2;
+  border-color: #1976d2;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background-color: #1565c0;
+  box-shadow: 0 0 10px #1976d2;
+}
+
+.btn-danger {
+  background-color: #b71c1c;
+  border-color: #b71c1c;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.btn-danger:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 0 10px #b71c1c;
+}
+
+/*
+  Horror-themed headline style
+  - Creepster font, red glow, and letter spacing
+*/
+.display-3 {
+  font-family: 'Creepster', cursive, 'Montserrat', Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow:
+    0 2px 8px #000,
+    0 0px 16px #b71c1c;
+}
+
+.navbar {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #222;
+  background: rgba(24, 26, 27, 0.98); // subtle transparency for a glassy effect
+  backdrop-filter: blur(2px);
+}
+
+/*
+  Haunt Card styles for grid on Landing page
+  - Semi-transparent background, border, shadow, and hover effect
+*/
+.haunt-card {
+  background: rgba(40, 40, 50, 0.85);
+  border: 1.5px solid #b71c1c;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+.haunt-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 8px 32px 0 #b71c1c88,
+    0 1.5px 6px 0 rgba(255, 0, 0, 0.15);
+  border-color: #fff;
+}
+
+.haunt-grid-bg {
+  background: rgba(60, 60, 80, 0.55); // slightly lighter, semi-transparent
+  border: 2px solid #333;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
