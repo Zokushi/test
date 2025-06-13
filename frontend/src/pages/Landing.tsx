@@ -75,6 +75,62 @@ const Landing: React.FC = () => {
             Explore Spooky Destinations
           </a>
         </div>
+
+        {/* Featured Hotel Section */}
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-10">
+            <div className="card bg-gradient shadow-lg border-0" style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)' }}>
+              <div className="card-body p-5">
+                <div className="row align-items-center">
+                  <div className="col-md-6">
+                    <div className="text-white">
+                      <span className="badge bg-warning text-dark mb-2">✨ Featured Hotel</span>
+                      <h2 className="display-5 fw-bold text-warning mb-3">Jerome Grand Hotel</h2>
+                      <p className="lead mb-3">
+                        Historic luxury in the heart of Jerome's mining district. Experience old-world charm 
+                        with modern amenities in this beautifully restored 1920s landmark.
+                      </p>
+                      <div className="row mb-4">
+                        <div className="col-6">
+                          <div className="text-center">
+                            <h4 className="text-success mb-1">$220+</h4>
+                            <small className="text-muted">per night</small>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div className="text-center">
+                            <h4 className="text-info mb-1">9</h4>
+                            <small className="text-muted">room types</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex gap-2 flex-wrap mb-3">
+                        <span className="badge bg-light text-dark">Historic Property</span>
+                        <span className="badge bg-light text-dark">Restaurant</span>
+                        <span className="badge bg-light text-dark">Free WiFi</span>
+                        <span className="badge bg-light text-dark">Pet Friendly</span>
+                      </div>
+                      <Link 
+                        to="/hotels/jerome-grand" 
+                        className="btn btn-warning btn-lg px-4"
+                      >
+                        🏨 Book Now - Live Availability
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <img 
+                      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=80" 
+                      alt="Jerome Grand Hotel" 
+                      className="img-fluid rounded shadow"
+                      style={{ maxHeight: '350px', width: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Carousel Section */}
         {carouselLocations.length > 0 ? (
           <Carousel

@@ -1,0 +1,431 @@
+
+
+
+<script type="text/javascript">
+var langjs=[{"L_ClickDragText":"Click \/ Drag the mouse to select the days","L_RoomsNotAvailable":"There are only {number} room(s) available on {day}. Please try other available rooms","L_CheckInNotAllowed":"Sorry, Check-in is not allowed on your selected date for this room. Please try other available rooms.","L_CheckOutNotAllowed":"Sorry, Check-out is not allowed on your selected date for this room.Please try other available rooms.","L_PleaseSelect":"Please select at least ","L_MaxSelect":"Please select only ","L_NightsToBook":" nights to book this room.","L_WrongDataSelection":"Sorry, Your selection of days is not allowed. Please check and try again.","L_WrongDataEntered":"There are no sufficient data are available for booking.","L_NoGaps":"Gaps not allowed between stay","L_Sold":"Sold","L_JRooms":"Room(s)","L_JPrice":"Price","L_MinNightsRequired":" Min {nights} nights required.","L_MaxNights":" Max {nights} nights allow.","L_RightClick":"Opps!! Right Click not allowed here.","L_GuestNotAvailable":"Sorry, This room can occupy maximum {number} guests.","L_AdultsNotAvaialbe":"Sorry, Each room can occupy maximum {number} guests.Please select more rooms","L_ChildsNotAvailabe":"Sorry, Each room can occupy maximum {number} childs.Please select more rooms","L_NoChildAllowed":"Sorry, This room cannnot occupy childs. Please try other rooms","L_TIckNightsToBook":"Please select sufficient nights to book this room.","L_NegativeMsg":"Negative price booking is not allowed.","L_ViewersCnt1":"There are","L_ViewersCnt2":"users looking at this hotel","L_ViewersCnt3":"right now!","L_ChkGreater":"Check-In Date shouldn't be greater than Check-Out Date","L_WrongCurrencyCode":"Currency code configuration is wrong.please set proper configuration from admin panel.","L_NoSuffDataEntered":"There are no sufficient rooms are available for booking.","L_WrongInvSelec1":" has maximum {number} rooms available.","L_RecentBook1":"Total ","L_RecentBook2":" booking made recently.","L_GuestCountryNote1":"guest(s) from","L_GuestCountryNote2":"<br>have made a booking in last 3 days","L_morenightsnotallowed":"Booking for more than 3 year(s) not allowed","L_NoRoomsAvailable_2":"There are not enough rooms available for the selected dates.","L_SelectRooms":"Please select atleast one room.","L_RoomLeft1":"Room Left","L_RoomLeft2":"Rooms Left","L_Roomcap":"Room","L_Roomcap1":"Rooms","L_Child2":"Child","L_Child3":"Children","L_Adultlbl4":"Adult","L_Adultlbl5":"Adults","L_Nightlbls":"Night","L_Nightlblm":"Nights","L_PromoWrong2":"Promotional Code cannot be empty!","L_Only2":"Only","Hurrylbl":"Hurry!","Noroomsleftlbl":"No rooms left","L_SameRoomNAHotel":"Selected room type cannot be booked as same rooms are not availble for selected dates. We want to provide you hassel free experiece so please select another room.","L_SameRoomNABook":"As per your current room(s) selection you will be required to change room(s) during stay.Do you wish to continue ?","L_SameRoomNAselected":"For selected stay duration below is the same rooms availability for selected rate plans","L_roomsAvailable":"rooms available","L_NOTAVAILABLE":"Not Available","L_MaxOccNote":"This room can occupy maximum {number} guests.","L_MaxAdultAllowed":"This room can occupy maximum {number} adults.","L_MaxChildAllowed":"This room can occupy maximum {number} child.","L_select_child2":"Child [childno]","L_Age2":"Age","L_SelectAge":"Please select child age.","L_ReadMore":"Show More","L_ReadLess":"Show Less","L_reviewsnote":"You have selected a hotel with guest review score of <b>","L_FBShareOfferExpire":"Sorry , This offer is expired or not applicable on selected criteria !","lblAccessRestricted":"Opps! Not allow","lblErrordate":"Opps! Error","lblForgotcheckavailability":"Looks like you forgot to 'Check Availability'","lblHangon":"Hang on!","lblCompareMessage":"To compare rooms, please click on 'Add To Compare'.","lblCompareMessage2":"Comparision for more then 4 rooms not allow.","lblCompareMessage3":"Select atleast 2 rooms to compare.","lblComparerooms_1":"Click To Compare","lblAddtocompare_1":"Add To Compare","L_Add_Room":"Add Room","L_Loading":" Loading...","L_SelectAge2":"Please select child age.","L_Pleaseclickchkava":"Yes, Please click 'Check Availability'","L_roombooklimit":"Sorry ! You cannot book more than {nobook_rms_limit} rooms at a time.","lblSessionExpired":"Oops! As this website page was idle for some time and there was no activity, session of this web page is expired. In order to continue, please refresh this page","L_Pleaserefreshpage":"Yes, Please refresh the page","L_NLBOOK":"Book","L_NL_Book":"Book","SWAL_morenightsnotallowed":"Booking for more than 90 days not allowed"}];
+</script><div id="room">
+<form name="frm" id="frm" method="post" action="https://live.ipms247.com/booking/billinginfo-jeromegrandhotel">
+<script type="text/javascript">
+try
+{
+	   if(parent.document.domain!=serverhost && !parent.editframe)
+	   {
+	   document.getElementById("frm").target = "_blank";
+	   }
+}
+catch(e)
+{
+console.log("long stay error domain " + e);
+try
+{
+if(!parent.editframe)
+document.getElementById("frm").target = "_blank";
+}
+catch(e)
+{
+document.getElementById("frm").target = "_blank";
+}
+}
+</script>
+<script type="text/javascript">
+try
+{
+var resgrid=[[]];
+resgrid[0][0]['MultiplyFactor']=1;
+resgrid[0][0]['MultiplyCurrSymbl']='$';
+resgrid[0][0]['MultiplyCurrCode']='USD';
+resgrid[0][0]['MultiplyCurrSymbl1']='';
+resgrid[0][0]['MultiplyCurrCode1']='';
+resgrid[0][0]['RoundOffType']='';
+resgrid[0][0]['RoundOffLimit']=1;
+resgrid[0][0]['ShowTaxInclusiveExclusiveSettings']=0;
+resgrid[0][0]['RunOnMaximumOccupanySettings']='0';
+resgrid[0][0]['acr']='false';
+resgrid[0][0]['ResUIPaxOnMaximumOccupancy']='0';
+resgrid[0][0]['dis_checkindate']='12/01/2025';
+resgrid[0][0]['dis_checkoutdate']='12/05/2025';
+resgrid[0][0]['ApplyPackageOnExtras']='0';
+}catch(e)
+{
+console.log(e);
+}
+$(function(){
+  $('.followMeBar').each(function() {
+	$(this).height($(this).outerHeight());
+	$(this).wrap('<div class="followWrap"></div>');
+	$(this).parent().height($(this).outerHeight());
+  });
+});
+$(window).scroll(function() {
+  var $headers = $(".followMeBar");
+  var scrollTop = $(this).scrollTop();
+  if (scrollTop <= 0) {
+    $headers.removeClass("fixed");
+  } else {
+    $headers.each(function(index, $el) {
+      var $curHeader = $($headers).eq(index);
+      var curTop = $curHeader.offset().top;
+      var curHeight = $curHeader.height();
+      var isRelative = ($el.isFixed && scrollTop <= $el.exTop);
+      var isFixed = (curTop <= scrollTop);
+      var top = 0;
+      if (isRelative) {
+        $($el).removeClass("fixed");
+        $el.isFixed = false;
+      } else if (isFixed) {
+	$(".followMeBar").removeClass("fixed");
+      	$($el).addClass("fixed");
+        if (!$el.isFixed) {
+          $el.isFixed = true;
+          $el.exTop = curTop;
+        }
+      }
+    });
+  }
+});
+</script>
+<script>
+	var closest_ava_array = [];
+</script>
+<div class="page-wrapper">
+<div class="promo-popUp">
+<div class="vres-form-group">
+<input type="text" placeholder="Promotion Code"  name="promotioncode" id="promotioncode" value=""/>
+<a href="javascript:void(0);" class="vres-btn" id="Applypromo">Apply</a>
+</div>
+</div>
+<div class="container">
+<div class="row vres-flex-div" id="room_container">
+<div class="col-left-card">
+<span id="appliedfilter_msg" style="display: none;">
+<span class="applymsg">Filters have been applied.
+<a href="javascript:void(0)" id="reset_filter_all2" class="resetall msg_resetall">Reset All Filters</a>
+</span>
+</span>
+<input type="hidden" name="ratemode" id="ratemode" value=ALLOCATED>
+<input type="hidden" id="nl_loader"/>
+<input type="hidden" id="dis_checkindate" value="12/01/2025"/>
+<input type="hidden" id="dis_checkoutdate" value="12/05/2025"/>
+<input type="hidden" id="datalyr_checkindate" value="12-01-2025"/>
+<input type="hidden" id="datalyr_checkoutdate" value="12-05-2025"/>
+<input type="hidden" id="datalyrslash_checkindate" value="12/01/2025"/>
+<input type="hidden" id="datalyrslash_checkoutdate" value="12/05/2025"/>
+<input type="hidden" id="hbrandname" value="Jerome Grand Hotel"/>
+<input type="hidden" id="hlocation" value="Jerome"/>
+<input type="hidden" id="hpromocode" value=""/>
+<input type="hidden" id="hpromoname" value=""/>
+<input type="hidden" id="rooms" value="1"/>
+<input type="hidden" id="adult" value="5"/>
+<input type="hidden" id="child" value="0"/>
+<input type="hidden" id="hcode" value="10246"/>
+<input type="hidden" name="slab_before_discount" id="slab_before_discount" value=0>
+<script type="text/javascript">
+var promocode_chk='';
+if (""!='') {
+promocode_chk="";
+}
+else if(""!='')
+{
+promocode_chk="";
+}
+</script>
+<script type="text/javascript">
+jQuery(function() {
+if(promocode_chk!='')
+{
+swal({
+	       title: "Wrong Promotional Code",
+	       text: "Sorry you have entered wrong promotional code or its not applied on searching criteria.",
+	       type: 'error',
+	       showCancelButton: false,
+	       animation:false
+   });
+jQuery("#promotioncode").val('');
+jQuery("#promotioncode2").val('');
+jQuery("#promo_apply_pnl").hide();
+jQuery("#applypromo_text").text("");
+jQuery(".vres_promo-btn").removeClass("promo_applied");
+return false;
+}
+});
+</script>
+</div>
+<div class="col-right-card vres-bookdiv" id="booking_summery_blk">
+<div class="infoclickwrap info"><i class="vres-stripe" aria-hidden="true"></i></div>
+<div class="booking-section">
+<div class="vres-roombooked room_summary" id="room_summary">
+	<input type="hidden" id="totroomcnt" value="0"/>
+<ul>
+	<li class="rooms-added"></li>
+<li id="checkin_summ_blk" class="roomSummery-dates">
+<label class="bs-lbl">Dates</label> <span class="bs-chkinout">
+<span id="_checkin"></span> - <span id="_checkout"></span></span>
+</li>
+<li id="night_summ_blk" class="roomSummery-night">
+<label class="bs-lbl"><span id="_nightlbl"></span>
+<span id="_totalnights" class="bs-night"></span></label>
+</li>
+<li id="summary_row_clone" style="display: none;">
+<span class="fl-left">
+<span>[rtplanname]</span><br>
+<small>
+<b class="roomSummery_pax">
+			<span>
+				<div class="summeryPaxinfo" id="listingadult" style="display: inline-block;">[adult_tot_room]</div>
+				<div class="summeryPaxinfo" id="listingchild" style="display: inline-block;">[child_tot_room]</div>
+				<div class="summeryPaxinfo" id="listroom" style="display: inline-block;">[room_tot]</div>
+			</span>
+	       </b>
+	       <a href="javascript:void(0);"><i class="fa fa-edit" id="[edit_row]"></i>
+	       </a>
+       </small>
+</span>
+<p class="fl-left">
+       <span class="currency currency-rate">[precurreny]</span>[room_amt]<span class="currency currency-rate">[postcurreny]</span>
+</p>
+<i class="fa fa-close" id="[delete_row]"></i>
+</li>
+<div id="summ_add" class="collapse"></div>
+</ul>
+<div class="vres-total" id="vres-total">
+	<span>
+		<i>Total</i>
+		<b class="fl-right">
+		       <span id="grand_total"></span>
+		</b>
+	</span>
+	<a aria-label="Book Room. Continue to billing page." href="javascript:void(0);" name="bookingmulbtn" id="bookingmulbtn" class="subhead-btn bknow" style="margin-top: 15px;"> Book</a>
+	<p id="err_child_age" class="err_child_age"></p>
+</div>
+</div>
+<div class="no-roomdiv" id="no_room_selected">
+	<span class="vres-stripe be-noroom"></span>
+<h3>
+No Room(s)<br />
+<small>Selected</small>
+</h3>
+<div id="lookinguser" class="user_alert">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row vres-norecord-div norecord-main-div" id="norecord_main_blk" style="display: none;">
+<div id="no_record" style="display: none;" class="norecord">We have no rooms available for the selected dates. Please select another date.</div>
+<span id="smallloader" style="display: none;" class="smallloader">
+<span class="loader size-1"></span>
+</span>
+<div id="closestava_norec" class="closestava_norec_cls"></div>
+<div class="norecord_details vres-norecord-div">
+<div class="detail-content">You can check the date-wise availability of rooms here.</div>
+<a style="display: none;" href="#checkavail-modal" name="availcalmain" id="availcalmain" data-toggle="modal" class="vres-dtl availability_calender vres-btn bt-primary" >
+<i class="fa fa-calendar-check-o" style=""></i> Availability Calendar
+</a>
+</div>
+</div>
+<div class="row vres-norecord-div" style="display: none;" id="no_filterrecord">
+<div class="norecord">We couldn't find rooms to match your filters.</div>
+<div class="norecord_details">
+<a  style="cursor: pointer;" name="noroomresetallfilters" class="subhead-btn subhead-btn-bg" id="noroomresetallfilters">
+<i class="fa fa-refresh" style=""></i>&nbsp;&nbsp;Reset all filters
+</a>
+</div>
+</div>
+<script>
+	$('a[id^=addroombut_],a[id^=addroom_],a[id^=removeroom_]').on('click',function(){
+		if($('#re_pricecheckiframe').contents().find("#pricewidgetload").hasClass("open")==true)
+						 $('#re_pricecheckiframe').contents().find(".price-btn,.price-widget-head").trigger({ type: "click" });
+	});
+	jQuery('.info').on('click', function(){
+		jQuery('#summ_add').toggleClass('collapse');
+	});
+	var bodytogglecnt = 0;
+	jQuery('.adrm-wrap').on('click', function(){
+		jQuery('.rooms-added').html(jQuery('#totroomcnt').val() + ' Rooms Added' );
+		if(jQuery('#totroomcnt').val() > 0 && jQuery('#totroomcnt').val() !=='')
+		{
+			if(bodytogglecnt == 0)
+			{
+				bodytogglecnt++;
+				jQuery('body').toggleClass('adjfooter');
+			}
+		}
+		else if(jQuery('#totroomcnt').val() == 0)
+		{
+			bodytogglecnt = 0;
+			jQuery('body').toggleClass('adjfooter');
+		}
+	});
+	   jQuery('.toggle-sidebar').on('click', function(e){
+				jQuery('.WebShowHighlighted').toggleClass('open');
+			});
+	   if(jQuery.isEmptyObject(closest_ava_array)==false) {
+       			 var postData={
+								   chkin:'2025-12-01',
+								   HotelId: 'jeromegrandhotel',
+								   nights:'4',
+								   lang_code:"",
+								   langtext:"",
+								   travelid:"",
+								   ArrivalDate:"2025-12-01",
+								   arr:JSON.stringify(closest_ava_array)
+							   };
+					 getUrl=serverurl+'closest_ava_all.php';
+					 $.ajax({
+							url: getUrl,
+							type: "POST",
+							data: postData,
+							error: function(){
+							},
+							beforeSend: function(){
+								jQuery(".smallloader_common").show();
+							},
+							complete: function(){
+								  jQuery(".smallloader_common").hide();
+							},
+							success:function( data ){
+								   var closest_dates_na=jQuery(data).find(".closest_dates_na2").html();
+								   jQuery(".closest_dates_na").html(closest_dates_na);
+								   $.each(closest_ava_array, function( key, value ) {
+										  cloavadiv_var="cloavadiv_"+value['roomrateunkid']+":"+value['specialunkid']+"_"+value['row_rec'];
+												 var strdata='';
+												 jQuery(data).find(".closest_dates_wrap").each(function() {
+														var cloid=jQuery(this).attr('id');
+														var cloid_arr=cloid.split('|');
+														id2=cloid_arr[0];
+														var cloid_id2=id2.split("_");
+														if(cloid_arr[0]==cloavadiv_var) {
+															   var conn=jQuery(this).html();
+															   strdata=strdata+conn;
+															   console.log(cloid_id2[2]);
+															   jQuery("#closestava2_"+cloid_id2[2]).html(strdata);
+														}
+												 });
+										});
+										jQuery(data).find(".closest_dates_wrap").each(function() {
+												 var clodatesclick=jQuery(this).find('.clodatesclick').attr('id');
+												 $("#"+clodatesclick).bind("click", function(){
+														closest_event(jQuery(this));
+												 });
+												 var cloid=jQuery(this).attr('id');
+												 var cloid_arr=cloid.split('|');
+												 id2=cloid_arr[0];
+												 var cloid_id2=id2.split("_");
+												 jQuery(".smallloader_common").hide();
+										});
+							}
+					 });
+			 		function closest_event(obj) {
+                            var start_dt=obj.parent().find('.clodatesclick_span_start').text();
+							var end_dt=obj.parent().find('.clodatesclick_span_end').text();
+							jQuery("#eZ_chkin").val(start_dt);
+							if(jQuery("#eZ_chkout").is(':hidden')==false)
+							{
+								jQuery("input[id$='eZ_chkout']").val(end_dt);
+								_setChkNight_clo();
+							}
+							else
+							{
+								_setChkNight_clo();
+							}
+							jQuery("#book").click();
+                        }
+				  function _setChkNight_clo(){
+					console.log(parseInt(_setCheckoutNight_clo()));
+					  jQuery("input[id$='eZ_Nights']").val(parseInt(_setCheckoutNight_clo()));
+				  }
+				  function _setCheckoutNight_clo(){
+					  var fromDate_var = jQuery("input[id$='eZ_chkin']").val();
+					  var fromDate_var=new Date(jQuery.datepicker.parseDate('mm-dd-yy',fromDate_var));
+					  var toDate_var=new Date(jQuery.datepicker.parseDate('mm-dd-yy',jQuery("#eZ_chkout").val()));
+					  toDate_var.setDate(toDate_var.getDate());
+					  if (toDate_var && fromDate_var) {
+						  var difference = 0;
+						  var oneDay = 1000*60*60*24;
+						  var difference = Math.round((toDate_var.getTime() - fromDate_var.getTime()) / oneDay);
+					  }
+					  return 	difference;
+				  }
+	   }
+</script>
+</div>
+<div id="hidData">
+</div>
+<input type="hidden" name="compare_room" id="compare_room">
+<input type="hidden" id="request_TA" value="">
+</div>
+<div id="detail-modal" class="modal hide fade vres-roominfo-popup" tabindex="-1" data-width="760">
+</div>
+<div id="checkavail-modal" class="modal hide fade ava_modalcls" tabindex="-1" >
+<div class="vres-modal-header">
+<h3>Availability Calendar</h3>
+<a href="javascript:void(0);" class="cls popupclose" data-dismiss="modal" aria-hidden="true">
+<i class="fa fa-close"></i></a>
+</div>
+<div class="vres-modal-body">
+<div class="availcal-input">
+<label for="Jumpdt">Jump To</label>
+<div class="wrap-input"><input type="text" name="Jumpdt" id="Jumpdt" type="text" readonly="readonly"/>
+<input type="hidden" value="" id="avail_cal_d_dt">
+<input type="hidden" value="" id="avail_cal_prmcode">
+<span></span></div>
+</div>
+<div class="availcal-input roomtype-input">
+    <label for="roomtype">Room Type</label>
+    <select class="roomtype" id="avairoomtype">
+        <option value=''>--Select--</option>
+         			       	 	<option value="1024600000000000007" selected >Deluxe Garden Room</option>
+			          			       	 	<option value="1024600000000000005" >Deluxe Guest Room Valley Side</option>
+			          			       	 	<option value="1024600000000000006" >Garden Room</option>
+			          			       	 	<option value="1024600000000000009" >Grand Suite</option>
+			          			       	 	<option value="1024600000000000008" >One Bedroom Suite</option>
+			          			       	 	<option value="1024600000000000002" >Standard Balcony Room Mountain Side</option>
+			          			       	 	<option value="1024600000000000003" >Standard Balcony Room Valley Side</option>
+			          			       	 	<option value="1024600000000000004" >Standard Connecting Balcony Rooms</option>
+			          			       	 	<option value="1024600000000000001" >Standard Room Valley Side</option>
+			              </select>
+</div>
+<div class="indicate-wrap">
+<span><i class="fa fa-check"></i> Available</span>
+<span><i class="fa fa-close"></i> Not Available</span>
+</div>
+<div id="checkavaildata">
+</div>
+</div>
+</div>
+<div id="enquire-modal" class="modal hide fade" tabindex="-1" data-width="760">
+<div class="vres-modal-header">
+<h3>Enquire</h3>
+<a href="javascript:void(0);" class="cls" data-dismiss="modal" aria-hidden="true">
+<i class="fa fa-close"></i></a>
+</div>
+<div class="vres-modal-body">
+<div id="mainenq">
+</div>
+</div>
+</div>
+<div id="mobile-roomdetails" style="display: none;">
+<div id="rmdetails_container"></div>
+</div>
+</form>
+</div>
+  							<section class="WebShowHighlighted">
+					<div class="model-main-content">
+					<img src="https://live.ipms247.com/booking/templates/resui/img/book_now.png" alt="" />
+						<h3>
+	Why book direct?</h3>
+<p>
+	Our online booking is available 24/7 and offers the same rates and room types as if you phoned us directly.  Please notate any special requests such as AAA/AARP/SENIOR rates in the &#39;SPECIAL REQUEST&#39; area. These rate options are not available to choose online and must be requested.  These rates offer a 10% discount Sunday-Thursday only.  All MILITARY/1ST RESPONDER are offered a 10% discount 7 days a week.  </p>
+
+					</div>
+					<div class="slide-in-out toggle-sidebar" ></div>
+				</section>
+			    <input type="hidden" id="roombooklimitcal" value="0"/>
+<input type="hidden" id="roombooklimit" value="2"/>
+<div id="cookieconsentmsg" style="display: none;">
+	<div class="cp-wraper">
+		<span class="cp-message">We use cookies to give you a better experience on our website. </span>
+		<span class="cp-button"><a id="cookieconsent" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>  Got it</a></span>
+	</div>
+	<!--<a href="#" class="cp-btnclose"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg></a>-->
+</div>

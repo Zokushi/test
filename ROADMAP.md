@@ -1,138 +1,185 @@
-# Cursed Compass Development Roadmap
+# Cursed Compass Development Roadmap - Hotel Booking Platform
 
-## Current Progress
+## Vision Shift: From Haunted Locations to Hotel Booking Platform
+**New Direction**: Building a hotel availability scraper and booking platform starting with Jerome Grand Hotel
+
+## Current Progress - MAJOR BREAKTHROUGH! 🚀
 - ✅ Set up basic application structure (React frontend, Express backend)
-- ✅ Implemented Sequelize ORM for database management
+- ✅ Implemented basic ORM for database management
 - ✅ Created basic location viewing functionality
 - ✅ Pushed to GitHub repository
-- ✅ Simplified database schema and set up migration system
-- ✅ Created seed data with 15 haunted locations
+- ✅ Created seed data with location structure
+- ✅ **COMPLETE JEROME GRAND INTEGRATION** - End-to-end working!
+- ✅ **Real room scraping** with prices, availability, descriptions
+- ✅ **Beautiful booking UI** with date picker and guest selector
+- ✅ **Featured hotel on homepage** with live data
+- ✅ **Full frontend → backend → scraper pipeline**
 
-## Immediate Next Steps:
+## CURRENT PRIORITY: Multi-Hotel Platform & Payment Integration
 
-### 1. Database Migration & Cleanup (COMPLETED ✅)
-- [x] Set up proper Sequelize migrations folder structure
-- [x] Create migration to drop existing tables with old schema
-- [x] Create migration to recreate location table with simplified schema (removing features, amenities, pricePerNight, maxGuests)
-- [x] Add seed file for initial location data
-- [x] Test database reset process
-- [x] Update Location model to match new schema
+### 🎯 IMMEDIATE NEXT STEPS (After Tonight's Success):
+1. **Add 2nd Hotel Scraper** (The Shining Hotel - Stanley Hotel)
+2. **Room Photos & Assets** - Make it look professional
+3. **Stripe Payment Integration** - Make bookings functional  
+4. **Testing & Polish** - End-to-end booking flow
 
-### 2. UI Refinements & Styling Improvements (CURRENT PRIORITY)
+### ⚠️ CRITICAL SETUP REQUIREMENTS (Run EVERY Time Before Starting):
+
+**Before running `npm run dev`, ALWAYS run these Prisma commands:**
+```bash
+# From the root directory:
+cd backend
+npx prisma generate    # Generate Prisma client (required for imports)
+npx prisma migrate deploy    # Apply any pending database migrations
+cd ..
+npm run dev    # NOW you can start the servers
+```
+
+**Why This is Critical:**
+- Without `prisma generate`, backend crashes with: `Module '@prisma/client' has no exported member 'PrismaClient'`
+- This regenerates the TypeScript client from the schema
+- Must be run after any schema changes or fresh installs
+
+---
+
+## COMPLETED PHASES: Hotel Availability Scraper System ✅
+
+### Phase 1: Core Scraping Infrastructure (2-3 weeks)
+**IMMEDIATE NEXT STEPS:**
+
+#### 1.1 Enhanced Types & Data Models ✅ COMPLETED
+- ✅ Expand Room interface to match real Jerome Grand data structure
+- ✅ Add scraping result validation types
+- ✅ Create error handling and retry interfaces
+- ✅ Update API response types for real room data
+
+#### 1.2 Web Scraping Dependencies ✅ COMPLETED
+- ✅ Install puppeteer, cheerio, axios packages
+- ✅ Set up user-agent rotation system
+- ✅ Configure request headers to mimic real browsers
+- ✅ Create scraping utility functions
+
+#### 1.3 Jerome Grand Form Automation ✅ COMPLETED
+- ✅ Automate POST request to Jerome Grand booking form
+- ✅ Handle session management and cookies properly
+- ✅ Parse form response HTML for room data
+- ✅ Test with real date ranges and guest counts
+
+#### 1.4 HTML Parser for Room Data ✅ COMPLETED
+- ✅ Extract `resgrid` JavaScript array from HTML response
+- ✅ Parse room availability, pricing, and descriptions
+- ✅ Handle "not available" and limited inventory scenarios
+- ✅ Create data validation for scraped results
+
+### Phase 2: Scraper Engine Architecture (2-3 weeks)
+
+#### 2.1 Generic Scraper Interface (🟡 Medium - 2-3 days)
+- [ ] Create abstract scraper base class for reusability
+- [ ] Define common scraping patterns and methods
+- [ ] Build site-specific configuration system
+- [ ] Prepare for adding additional hotels
+
+#### 2.2 Error Handling & Retry Logic (🟡 Medium - 2-3 days)
+- [ ] Implement exponential backoff for failed requests
+- [ ] Handle rate limiting and timeout scenarios
+- [ ] Create fallback mechanisms for scraper failures
+- [ ] Add comprehensive logging system
+
+#### 2.3 Change Detection System (🔴 Hard - 4-5 days)
+- [ ] Monitor hotel site structure changes
+- [ ] Create alert system for broken scrapers
+- [ ] Implement automated testing for scraper validity
+- [ ] Build recovery mechanisms for site changes
+
+#### 2.4 Caching & Performance (🟡 Medium - 2-3 days)
+- [ ] Implement Redis for room data caching
+- [ ] Add rate limiting for scraping requests
+- [ ] Optimize for concurrent hotel queries
+- [ ] Create cache invalidation strategies
+
+### Phase 3: Frontend Hotel Booking Interface (2-3 weeks)
+
+#### 3.1 Hotel Search Interface ✅ COMPLETED
+- ✅ Create date picker components for check-in/out
+- ✅ Build guest selection interface
+- ✅ Add search form with proper validation
+- ✅ Implement search state management
+
+#### 3.2 Room Results Display ✅ COMPLETED
+- ✅ Design room cards with pricing and availability
+- ✅ Add loading states with progress indicators
+- ✅ Create error states for failed scraping attempts
+- ✅ Implement real-time availability updates
+
+#### 3.3 Deep-link Hotel Pages ✅ COMPLETED
+- ✅ Build individual hotel pages with live data
+- ✅ Create room-specific booking flows
+- ✅ Add dynamic pricing updates
+- ✅ Implement booking initiation process (buttons ready for Stripe)
+
+### Phase 4: Production & Monitoring (1-2 weeks)
+
+#### 4.1 Deployment Infrastructure (🟡 Medium - 2-3 days)
+- [ ] Set up production environment for scrapers
+- [ ] Configure monitoring and alerting systems
+- [ ] Implement comprehensive logging for scraper activities
+- [ ] Create health check endpoints
+
+#### 4.2 Legal & Compliance (🔴 Hard - 3-5 days)
+- [ ] Review terms of service for target hotels
+- [ ] Implement rate limiting compliance
+- [ ] Add robot.txt respect mechanisms
+- [ ] Create ethical scraping guidelines
+
+## Future Expansion (Post-MVP)
+
+### Multi-Hotel Support
+- [ ] Add second hotel scraper (different booking system)
+- [ ] Create hotel management dashboard
+- [ ] Build scraper configuration UI
+- [ ] Implement bulk hotel onboarding
+
+### Advanced Features
+- [ ] Price tracking and alerts
+- [ ] Room comparison tools
+- [ ] Booking history for users
+- [ ] Integration with hotel APIs (when available)
+
+### Business Development
+- [ ] Direct hotel partnerships
+- [ ] Commission structure implementation
+- [ ] Customer support system
+- [ ] Payment processing integration
+
+## Difficulty Legend:
+- 🟢 **Easy**: Straightforward implementation, minimal complexity
+- 🟡 **Medium**: Moderate complexity, some research required
+- 🔴 **Hard**: Complex implementation, significant technical challenges
+
+## Risk Assessment:
+- **Legal Risk**: Hotel terms of service compliance
+- **Technical Risk**: Site structure changes breaking scrapers
+- **Performance Risk**: Scaling scraping across multiple hotels
+- **Business Risk**: Hotel blocking or rate limiting
+
+---
+
+## Legacy Items (Previous Haunted Location Focus):
+<details>
+<summary>Click to expand previous roadmap items</summary>
+
+### Previous UI Refinements & Styling Improvements
 - [ ] Create consistent theme file with color variables
 - [ ] Add atmospheric effects (fog overlay, subtle animations)
 - [ ] Improve typography and spacing
 - [ ] Enhance location cards with better hover states
 - [ ] Create loading skeletons for better UX
 
-### 3. Hosting Configuration
+### Previous Hosting Configuration
 - [ ] Set up hosting environment (Vercel, Netlify, or custom)
 - [ ] Create "Coming Soon" page for public access
 - [ ] Implement developer access toggle
 - [ ] Configure environment variables for different environments
 - [ ] Set up proper domain with Porkbun
 
-### 4. API Integration & Functionality 
-- [ ] Implement user authentication system
-- [ ] Create booking form functionality
-- [ ] Add location filtering capability 
-- [ ] Implement search functionality
-
-### 5. Component Organization & State Management
-- [ ] Reorganize components for better reusability
-- [ ] Implement proper state management (Context API or Redux)
-- [ ] Create custom hooks for repeated functionality
-- [ ] Add error boundaries for better error handling
-
-## Future Enhancements:
-
-### 1. Optimize Your Data Loading Strategy
-- **Don't store images in the database**. Instead:
-  - Create an organized `/public/images/locations` directory structure
-  - Use a consistent naming convention (e.g., `location-{id}.jpg` or categorized folders)
-  - Store just the image paths/references in your database
-  - This approach is more scalable and performant
-
-```
-/public/images/locations/
-├── lighthouses/
-│   ├── deserted-lighthouse-inn.jpg
-│   └── phantom-beacon.jpg
-├── cabins/
-│   ├── haunted-cabin.jpg
-│   └── cryptid-cabin.jpg
-└── hotels/
-    └── haunted-hotel.jpg
-```
-
-### 2. Build a Data Management System
-Instead of writing individual scripts or using DBeaver for each location:
-
-```typescript
-// Create an admin panel at /admin/locations
-// Basic implementation: 
-export function LocationsAdmin() {
-  const [locations, setLocations] = useState([]);
-  const [newLocation, setNewLocation] = useState({
-    name: '', description: '', ...
-  });
-
-  // Add form, bulk upload option, edit/delete capabilities
-}
-```
-
-### 3. Authentication & User Management
-```typescript
-// Option 1: Build your own auth (simplest implementation)
-// Option 2: Auth0 integration (recommended for production)
-import { Auth0Provider } from '@auth0/auth0-react';
-
-// Set up protected routes for booking/user features
-```
-
-### 4. Booking System Implementation
-```typescript
-// Create a booking service with:
-// - Date selection with availability checking
-// - Guest information collection
-// - Payment processing (or placeholder)
-// - Confirmation emails
-```
-
-### 5. Infrastructure & CI/CD
-- Set up CI/CD (GitHub Actions)
-- Configure proper environment variables
-- Plan for image hosting (AWS S3/Cloudinary for production)
-
-### 6. Security Enhancements
-- **Database Security**:
-  - Create restricted database users with limited permissions (not postgres superuser)
-  - Use randomly generated strong passwords for database access
-  - Implement IP restriction for database access in production
-
-- **User Authentication & Authorization**:
-  - Implement role-based access control (admin, user, moderator)
-  - Strong password policies for user accounts
-  - Use secure authentication methods (OAuth, JWT with proper expiration)
-
-- **Environment Security**:
-  - Use a secrets manager for production credentials (AWS Secrets Manager, HashiCorp Vault)
-  - Ensure .env files are never committed to version control
-  - Implement proper CORS policies for API endpoints
-
-### 7. Code Quality & Testing
-```typescript
-// Add tests for critical paths
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
-test('location details renders correctly', () => {
-  render(<LocationDetails location={mockLocation} />);
-  expect(screen.getByText('Haunted Cabin')).toBeInTheDocument();
-});
-```
-
-### 8. Design Improvements
-- Implement a design system (Tailwind, Chakra UI, or MUI)
-- Focus on responsive design for mobile users
-- Add subtle animations/transitions for better UX
+</details>

@@ -9,6 +9,7 @@ import HauntedHotels from './pages/HauntedHotels';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import LocationDetails from './pages/LocationDetailsPage';
+import JeromeGrandHotel from './pages/JeromeGrandHotel';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/location/:id" element={<LocationDetails />} />
+        <Route path="/hotels/jerome-grand" element={<JeromeGrandHotel />} />
       </Routes>
     </>
   );

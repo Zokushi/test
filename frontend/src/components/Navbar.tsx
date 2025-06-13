@@ -43,6 +43,11 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link text-warning fw-semibold" to="/hotels/jerome-grand">
+                🏨 Book Hotels
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to="/about">
                 About
               </NavLink>

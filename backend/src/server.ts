@@ -1,14 +1,16 @@
 // Import Express and its type definitions
 import express, { Express, Request, Response } from 'express';
-// import { PrismaClient } from '@prisma/client';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
+import { JeromeGrandScraperFixed } from './services/hotelChecker/jeromeGrandScraperFixed';
+import { AvailabilityRequest } from './services/hotelChecker/types';
 dotenv.config();
 
 // Create an Express application
 const app: Express = express();
 const prisma = new PrismaClient();
+const jeromeGrandScraper = new JeromeGrandScraperFixed();
 // Define the port we'll run on
 const PORT = process.env.PORT || 5000;
 
@@ -18,7 +20,6 @@ app.use(cors());
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// const prisma = new PrismaClient();
 
 // Basic route to test our server
 app.get('/', (req: Request, res: Response) => {
@@ -54,6 +55,18 @@ app.get('/locations/:id', async (req: Request, res: Response) => {
     res.json(location);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch location' });
+  }
+});
+
+// Add availability check endpoint
+app.post('/availability/check', async (req: Request, res: Response) => {
+  try {
+    const request: AvailabilityRequest = req.body;
+    const availability = await jeromeGrandScraper.checkAvailability(request);
+    res.json(availability);
+  } catch (error) {
+    console.error('Error in availability check:', error);
+    res.status(500).json({ error: 'Failed to check availability' });
   }
 });
 

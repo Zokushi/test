@@ -5,6 +5,13 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
-  "install": "npm install --workspace=backend && npm install --workspace=frontend"
+    "setup": "npm install --workspace=backend && npm install --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cheerio": "^1.0.0"
   }
 }
